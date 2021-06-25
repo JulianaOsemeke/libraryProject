@@ -1,29 +1,19 @@
-const booklist = document.getElementById('book-list');
-let library = [];
-addBooksbutton.addEventListener('click',()=>{
-  document.documentElement.style.setProperty(displayform,'flex');
-});
-
-function Book(title, author, pages, status) {
+function Book(title, author, pages){
   this.title = title;
   this.author = author;
   this.pages = pages;
-  this.status = status;
+  this.read = read;
 }
 
-function addNewBook() {
-  document.querySelector('#book-form').addEventListener('submit', (e) => {
-    
+const store = []
 
-    const title = document.querySelector('#title').value;
-    const author = document.querySelector('#author').value;
-    const pages = document.querySelector('#pages').value;
-    const read = document.querySelector('#read').value;
-    const book = new Book(title, author, pages, read);
-    addBookToLibrary(book);
-
-  });
-}
-
-
+function getBooks() { 
+  const raw = window.localStorage.getItem('storedBooks');
+  
+  if (raw) return JSON.parse(raw)
+  return []
+  
+}  
+function saveToLocalStorage() { window.localStorage.setItem('storedBooks', JSON.stringify(storedBooks)); } 
+const storedBooks = getBooks();
 
