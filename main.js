@@ -36,5 +36,13 @@ function addBookToList(book){
   <td> <button class="btn btn-info" id="status"> ${book.read}</button></td>
   <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
   `;
+  
   list.appendChild(row);
+  row.querySelector('a').addEventListener('click', (e) => {
+    e.preventDefault()
+    row.remove()
+    const index = myLibrary.indexOf(book)
+    myBooks.splice(index, 1)
+    saveToLocalStorage()
+  })
 }
