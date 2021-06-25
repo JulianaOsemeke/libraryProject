@@ -46,3 +46,31 @@ function addBookToList(book){
     saveToLocalStorage()
   })
 }
+
+
+
+
+
+
+ /* Event: Add a Book */
+ document.querySelector('#book-form').addEventListener('submit', (e) => { 
+
+  e.preventDefault();
+
+  //Get form Values
+  const title = document.querySelector('#title').value;
+  const author = document.querySelector('#author').value;
+  const pages = document.querySelector('#pages').value;
+  const read = document.querySelector('#read').value;
+  
+  // Instantiate Book
+  const book = new Book (title, author, pages, read);
+  
+  console.log(book);
+
+
+  // Add Book to UI
+  addBookToLibrary(book);
+
+
+});
