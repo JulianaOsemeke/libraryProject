@@ -1,15 +1,8 @@
-const myLibrary = [{
-  title: "Ruby",
-  author: "Microverse",
-  pages: 100,
-  status: true
-},  {
-  title: "Javascript",
-  author: "Odin",
-  pages: 150,
-  status: false
-
-}]
+const booklist = document.getElementById('book-list');
+let library = [];
+addBooksbutton.addEventListener('click',()=>{
+  document.documentElement.style.setProperty(displayform,'flex');
+});
 
 function Book(title, author, pages, status) {
   this.title = title;
@@ -31,7 +24,6 @@ function addNewBook() {
 
   });
 }
-
 
 
 
