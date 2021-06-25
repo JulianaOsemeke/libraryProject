@@ -47,9 +47,13 @@ function addBookToList(book){
   })
 }
 
-
-
-
+function clearFields() {
+  document.querySelector('#title').value = '';
+  document.querySelector('#author').value = '';
+  document.querySelector('#pages').value = '';
+  document.querySelector('#read').checked= false;
+}
+displayBooks()
 
 
  /* Event: Add a Book */
