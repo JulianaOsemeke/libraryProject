@@ -25,3 +25,16 @@ function addBookToLibrary(book) {
   saveToLocalStorage()
   addBookToList(book)
 }
+function addBookToList(book){
+  const list = document.querySelector('#tableBody');
+  const row = document.createElement('tr');
+  book.read = document.getElementById('read').checked;
+  row.innerHTML= `
+  <td>${book.title}</td>
+  <td>${book.author}</td>
+  <td>${book.pages}</td>
+  <td> <button class="btn btn-info" id="status"> ${book.read}</button></td>
+  <td><a href="#" class="btn btn-danger btn-sm delete">X</a></td>
+  `;
+  list.appendChild(row);
+}
